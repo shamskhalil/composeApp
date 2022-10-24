@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My CMS</title>
+</head>
+
+<body>
+
+    <div>
+        <p>list of users:</p>
+        <% if (response.payload) { %>
+            <% response.payload.forEach(function(o){ %>
+                <p>
+                    Name: <%=o.fName %> Type: <%=o.userType %>
+                </p>
+                <% }); %>
+
+                    <% } %>
+    </div>
+    <hr>
+
+    <div>
+        <h4>Create New User</h4>
+        <form method="POST" action="/create">
+            <input type="text" name="fname" />
+            <button type="submit">Add User</button>
+        </form>
+    </div>
+
+
+</body>
+
+</html>
